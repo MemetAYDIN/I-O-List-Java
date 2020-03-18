@@ -9,13 +9,14 @@ import java.util.ArrayList;
 public class SchoolTest {
 	
 	public static void main(String[] args) {
-		School schl=new School(1,"Special Things Universty");
+		
+		School schl=new School(1,"Special Things Universty");//Main List
 		schl.setSchllClssList(new ArrayList<Class>());
 		
-		Class clssTchr=new Class(2,"3/A Teacher List");
+		Class clssTchr=new Class(2,"3/A Teacher List");//Teacher List
 		clssTchr.setClssTchrList(new ArrayList<Teacher>());
 		
-		Class clssStdnt=new Class(2,"3/A Student List");
+		Class clssStdnt=new Class(2,"3/A Student List");//Student List
 		clssStdnt.setClssStdntList(new ArrayList<Student>());
 		
 		Teacher tchr=new Teacher(100,"Albert Einstien",5001);
@@ -37,11 +38,12 @@ public class SchoolTest {
 		System.out.println(schl.getSchId()+" "+schl.getSchName());
 		System.out.println("\t"+clssTchr.getClsId()+" "+clssTchr.getClsName());
 		
-		String path1="/home/nemo/Desktop/Works/Java/Godoro/test2.txt";
+		String path1="/home/nemo/Desktop/Works/Java/Godoro/test2.txt";//Path for writer and reader
 		
 		
 	
-			try(BufferedWriter bw=new BufferedWriter(new FileWriter(path1))) {
+			try(BufferedWriter bw=new BufferedWriter(new FileWriter(path1)))//File Writer method
+			{
 				
 				bw.write(schl.getSchId()+" "+schl.getSchName()+"\r\n");
 				
@@ -56,7 +58,7 @@ public class SchoolTest {
 					
 					bw.write("\t"+"\t"+tchr0.getTchrId()+" "+tchr0.getTchrName()
 				
-					+" "+tchr0.getTchrNo()+"\r\n");
+					+" "+tchr0.getTchrNo()+"\r\n");//Write Teacher list
 				}
 				
 				bw.write("\t"+clssStdnt.getClsId()+" "+clssStdnt.getClsName()+"\r\n");
@@ -64,15 +66,15 @@ public class SchoolTest {
 				{
 					
 					bw.write("\t"+"\t"+stdnt0.getStdntId()+" "+stdnt.getStdntName()
-					+" "+stdnt0.getStdntNo()+"\r\n");
+					+" "+stdnt0.getStdntNo()+"\r\n");//Write Student List
 				}
 				
 				
-				bw.close();
+				bw.close();//Close write process
 				
 			} catch (Exception e) {
 				
-				System.out.println("Yazma Yanlışı....");
+				System.out.println("Wrong Write....");
 				e.printStackTrace();
 				
 			}
